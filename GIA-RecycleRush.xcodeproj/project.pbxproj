@@ -28,6 +28,10 @@
 		97B0A21E2C292B8100A132C4 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 97B0A21D2C292B8100A132C4 /* FirebaseRemoteConfigSwift */; };
 		97B0A2202C292B8100A132C4 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 97B0A21F2C292B8100A132C4 /* FirebaseStorage */; };
 		97B0A2222C292B8100A132C4 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 97B0A2212C292B8100A132C4 /* FirebaseStorageCombine-Community */; };
+		97FC0A2B2C2948B2000240D3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FC0A2A2C2948B2000240D3 /* SignUpViewController.swift */; };
+		97FC0A2D2C294D82000240D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97FC0A2C2C294D82000240D3 /* GoogleService-Info.plist */; };
+		97FC0A2F2C29505C000240D3 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FC0A2E2C29505C000240D3 /* InitialViewController.swift */; };
+		97FC0A312C295282000240D3 /* LoginViewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FC0A302C295282000240D3 /* LoginViewControllerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +43,10 @@
 		9741A9CA2C29165F00455CEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9741A9CD2C29165F00455CEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9741A9CF2C29165F00455CEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97FC0A2A2C2948B2000240D3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		97FC0A2C2C294D82000240D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		97FC0A2E2C29505C000240D3 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		97FC0A302C295282000240D3 /* LoginViewControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,12 +95,16 @@
 			isa = PBXGroup;
 			children = (
 				9741A9C12C29165E00455CEC /* AppDelegate.swift */,
+				97FC0A2A2C2948B2000240D3 /* SignUpViewController.swift */,
 				9741A9C32C29165E00455CEC /* SceneDelegate.swift */,
 				9741A9C52C29165E00455CEC /* ViewController.swift */,
+				97FC0A2E2C29505C000240D3 /* InitialViewController.swift */,
 				9741A9C72C29165E00455CEC /* Main.storyboard */,
+				97FC0A302C295282000240D3 /* LoginViewControllerViewController.swift */,
 				9741A9CA2C29165F00455CEC /* Assets.xcassets */,
 				9741A9CC2C29165F00455CEC /* LaunchScreen.storyboard */,
 				9741A9CF2C29165F00455CEC /* Info.plist */,
+				97FC0A2C2C294D82000240D3 /* GoogleService-Info.plist */,
 			);
 			path = "GIA-RecycleRush";
 			sourceTree = "<group>";
@@ -176,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9741A9CB2C29165F00455CEC /* Assets.xcassets in Resources */,
+				97FC0A2D2C294D82000240D3 /* GoogleService-Info.plist in Resources */,
 				9741A9CE2C29165F00455CEC /* Base in Resources */,
 				9741A9C92C29165E00455CEC /* Base in Resources */,
 			);
@@ -188,8 +201,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97FC0A2F2C29505C000240D3 /* InitialViewController.swift in Sources */,
+				97FC0A312C295282000240D3 /* LoginViewControllerViewController.swift in Sources */,
 				9741A9C62C29165E00455CEC /* ViewController.swift in Sources */,
 				9741A9C22C29165E00455CEC /* AppDelegate.swift in Sources */,
+				97FC0A2B2C2948B2000240D3 /* SignUpViewController.swift in Sources */,
 				9741A9C42C29165E00455CEC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
