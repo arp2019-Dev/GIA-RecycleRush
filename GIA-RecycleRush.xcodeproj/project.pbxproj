@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84B0A2502C2B4A5200E761BD /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0A24F2C2B4A5200E761BD /* Player.swift */; };
 		9741A9C22C29165E00455CEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9741A9C12C29165E00455CEC /* AppDelegate.swift */; };
 		9741A9C42C29165E00455CEC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9741A9C32C29165E00455CEC /* SceneDelegate.swift */; };
 		9741A9C62C29165E00455CEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9741A9C52C29165E00455CEC /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		84B0A24F2C2B4A5200E761BD /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		9741A9BE2C29165E00455CEC /* GIA-RecycleRush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GIA-RecycleRush.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9741A9C12C29165E00455CEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9741A9C32C29165E00455CEC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				9741A9CF2C29165F00455CEC /* Info.plist */,
 				97FC0A2C2C294D82000240D3 /* GoogleService-Info.plist */,
 				975EA8CD2C2A41F000B9CEC7 /* LaunchScreen.storyboard */,
+				84B0A24F2C2B4A5200E761BD /* Player.swift */,
 			);
 			path = "GIA-RecycleRush";
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				97FC0A2F2C29505C000240D3 /* InitialViewController.swift in Sources */,
 				97FC0A312C295282000240D3 /* LoginViewControllerViewController.swift in Sources */,
 				9741A9C62C29165E00455CEC /* ViewController.swift in Sources */,
+				84B0A2502C2B4A5200E761BD /* Player.swift in Sources */,
 				9741A9C22C29165E00455CEC /* AppDelegate.swift in Sources */,
 				97FC0A2B2C2948B2000240D3 /* SignUpViewController.swift in Sources */,
 				9741A9C42C29165E00455CEC /* SceneDelegate.swift in Sources */,
