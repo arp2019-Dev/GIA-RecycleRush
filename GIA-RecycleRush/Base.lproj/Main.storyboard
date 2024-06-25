@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5Sk-NI-CAj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -106,28 +106,13 @@
                         <outlet property="NameTextField" destination="tRc-aw-BjA" id="nO0-u4-WQx"/>
                         <outlet property="PasswordTextField" destination="XWQ-LN-QRR" id="Qct-F3-AjG"/>
                         <outlet property="usernameTextField" destination="ftY-Ue-0m2" id="R97-XE-tHd"/>
-                        <segue destination="6eI-Q5-x55" kind="presentation" identifier="goToNext" modalPresentationStyle="fullScreen" id="RPr-Wq-oHO"/>
+                        <segue destination="6eI-Q5-x55" kind="presentation" identifier="goToNext" modalPresentationStyle="fullScreen" id="QNa-5T-haP"/>
+                        <segue destination="3l8-NL-fa3" kind="presentation" identifier="goToNext" modalPresentationStyle="fullScreen" id="Cey-4D-MDL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o7j-m6-P6G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="63" y="-675"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="cB3-Xm-YXM">
-            <objects>
-                <navigationController id="5Sk-NI-CAj" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kph-Xy-37W">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="pdZ-DH-vsC"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="O3N-yj-YWD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-776" y="-2"/>
         </scene>
         <!--Initial View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -204,6 +189,9 @@
                             <constraint firstItem="gbT-We-bcr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="18" id="xSk-4t-U2o"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="3l8-NL-fa3" kind="presentation" identifier="home" modalPresentationStyle="fullScreen" id="FBj-3S-sRD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -214,7 +202,7 @@
             <objects>
                 <viewController id="GYw-cR-Ofd" customClass="LoginViewControllerViewController" customModule="GIA_RecycleRush" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2eL-qU-MdF">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome back!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="062-Ye-i3O">
@@ -261,7 +249,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVu-87-qEI">
-                                <rect key="frame" x="211.33333333333337" y="325.66666666666669" width="151.66666666666663" height="34.333333333333314"/>
+                                <rect key="frame" x="211.33333333333337" y="325.66666666666669" width="151.66666666666663" height="40.333333333333314"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Forgot Password">
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
@@ -289,7 +277,7 @@
                     <connections>
                         <outlet property="EmailTextField" destination="Thr-9z-XtD" id="brD-R9-Azi"/>
                         <outlet property="PasswordTextField" destination="ilL-ot-C7A" id="s1I-DM-tCI"/>
-                        <segue destination="6eI-Q5-x55" kind="presentation" identifier="goToNext" modalPresentationStyle="fullScreen" id="9WH-au-2vP"/>
+                        <segue destination="3l8-NL-fa3" kind="presentation" identifier="goToNext" modalPresentationStyle="fullScreen" id="IBJ-gf-xBh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hqz-t9-aqd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -361,7 +349,7 @@
         <!--Leaderboard-->
         <scene sceneID="oEZ-0u-f6t">
             <objects>
-                <viewController id="6eI-Q5-x55" customClass="ViewController" customModule="GIAHackathon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6eI-Q5-x55" customClass="ViewController" customModule="GIA_RecycleRush" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PgQ-x7-WXx">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -396,7 +384,13 @@
                             <constraint firstItem="6xL-1I-QDR" firstAttribute="top" secondItem="PgQ-x7-WXx" secondAttribute="top" constant="97" id="nEV-5Z-6Et"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Leaderboard" image="bars25" selectedImage="bars25" id="7dS-Fp-pkv"/>
+                    <tabBarItem key="tabBarItem" title="Leaderboard" image="bars25" selectedImage="bars25" id="7dS-Fp-pkv">
+                        <color key="badgeColor" systemColor="labelColor"/>
+                    </tabBarItem>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="account" modalPresentationStyle="fullScreen" id="IHH-ia-NtZ"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="ZhV-G0-Dbn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y3x-0J-TWy" sceneMemberID="firstResponder"/>
             </objects>
@@ -405,19 +399,19 @@
         <!--New Entry-->
         <scene sceneID="lW4-bC-cJS">
             <objects>
-                <viewController id="x1J-k5-Ag6" customClass="ViewController" customModule="GIAHackathon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="x1J-k5-Ag6" customClass="ViewController" customModule="GIA_RecycleRush" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c05-Hp-i90">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Recycle Rush" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJk-Au-VgS">
-                                <rect key="frame" x="124" y="59" width="145" height="30"/>
+                                <rect key="frame" x="124" y="0.0" width="145" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="New Entry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5D-rm-YPT">
-                                <rect key="frame" x="108" y="97" width="177" height="48"/>
+                                <rect key="frame" x="108" y="38" width="177" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -446,13 +440,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recycle Rush" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tks-bM-mFb">
-                                <rect key="frame" x="124" y="59" width="145" height="30"/>
+                                <rect key="frame" x="124" y="0.0" width="145" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Entry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7T-f8-WGE">
-                                <rect key="frame" x="108" y="97" width="177" height="48"/>
+                                <rect key="frame" x="108" y="38" width="177" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -478,6 +472,7 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="3l8-NL-fa3" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="ZPj-5F-3iT"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6pS-aI-ljr">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -496,8 +491,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="EjY-0W-dZh"/>
-        <segue reference="riI-zM-cvE"/>
+        <segue reference="FBj-3S-sRD"/>
+        <segue reference="QNa-5T-haP"/>
+        <segue reference="gqG-NZ-PoU"/>
+        <segue reference="ZhV-G0-Dbn"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="add25" width="25" height="25"/>

@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8401165D2C2A3D6400A55B06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8401165C2C2A3D6400A55B06 /* Assets.xcassets */; };
-		840116602C2A3D7000A55B06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8401165E2C2A3D6F00A55B06 /* LaunchScreen.storyboard */; };
 		9741A9C22C29165E00455CEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9741A9C12C29165E00455CEC /* AppDelegate.swift */; };
 		9741A9C42C29165E00455CEC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9741A9C32C29165E00455CEC /* SceneDelegate.swift */; };
 		9741A9C62C29165E00455CEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9741A9C52C29165E00455CEC /* ViewController.swift */; };
 		9741A9C92C29165E00455CEC /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 9741A9C82C29165E00455CEC /* Base */; };
+		975EA8CE2C2A41F000B9CEC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 975EA8CD2C2A41F000B9CEC7 /* LaunchScreen.storyboard */; };
+		975EA8D02C2A430000B9CEC7 /* LeaderBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975EA8CF2C2A430000B9CEC7 /* LeaderBoardViewController.swift */; };
 		97B0A2062C292B8100A132C4 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 97B0A2052C292B8100A132C4 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		97B0A2082C292B8100A132C4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 97B0A2072C292B8100A132C4 /* FirebaseAuth */; };
 		97B0A20A2C292B8100A132C4 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 97B0A2092C292B8100A132C4 /* FirebaseAuthCombine-Community */; };
@@ -32,21 +32,23 @@
 		97FC0A2D2C294D82000240D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97FC0A2C2C294D82000240D3 /* GoogleService-Info.plist */; };
 		97FC0A2F2C29505C000240D3 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FC0A2E2C29505C000240D3 /* InitialViewController.swift */; };
 		97FC0A312C295282000240D3 /* LoginViewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97FC0A302C295282000240D3 /* LoginViewControllerViewController.swift */; };
+		97FC0A332C2A40C9000240D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97FC0A322C2A40C9000240D3 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8401165C2C2A3D6400A55B06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../../Volumes/128GB Mihirsur007/XCode/GIAHackathon/GIAHackathon/Assets.xcassets"; sourceTree = "<group>"; };
-		8401165F2C2A3D6F00A55B06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../../../Volumes/128GB Mihirsur007/XCode/GIAHackathon/GIAHackathon/Base.lproj/LaunchScreen.storyboard"; sourceTree = "<group>"; };
 		9741A9BE2C29165E00455CEC /* GIA-RecycleRush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GIA-RecycleRush.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9741A9C12C29165E00455CEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9741A9C32C29165E00455CEC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9741A9C52C29165E00455CEC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9741A9C82C29165E00455CEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9741A9CF2C29165F00455CEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		975EA8CD2C2A41F000B9CEC7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		975EA8CF2C2A430000B9CEC7 /* LeaderBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardViewController.swift; sourceTree = "<group>"; };
 		97FC0A2A2C2948B2000240D3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		97FC0A2C2C294D82000240D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		97FC0A2E2C29505C000240D3 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		97FC0A302C295282000240D3 /* LoginViewControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerViewController.swift; sourceTree = "<group>"; };
+		97FC0A322C2A40C9000240D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,17 +96,18 @@
 		9741A9C02C29165E00455CEC /* GIA-RecycleRush */ = {
 			isa = PBXGroup;
 			children = (
+				97FC0A322C2A40C9000240D3 /* Assets.xcassets */,
 				9741A9C12C29165E00455CEC /* AppDelegate.swift */,
 				97FC0A2A2C2948B2000240D3 /* SignUpViewController.swift */,
 				9741A9C32C29165E00455CEC /* SceneDelegate.swift */,
 				9741A9C52C29165E00455CEC /* ViewController.swift */,
 				97FC0A2E2C29505C000240D3 /* InitialViewController.swift */,
 				9741A9C72C29165E00455CEC /* Main.storyboard */,
+				975EA8CF2C2A430000B9CEC7 /* LeaderBoardViewController.swift */,
 				97FC0A302C295282000240D3 /* LoginViewControllerViewController.swift */,
 				9741A9CF2C29165F00455CEC /* Info.plist */,
 				97FC0A2C2C294D82000240D3 /* GoogleService-Info.plist */,
-				8401165C2C2A3D6400A55B06 /* Assets.xcassets */,
-				8401165E2C2A3D6F00A55B06 /* LaunchScreen.storyboard */,
+				975EA8CD2C2A41F000B9CEC7 /* LaunchScreen.storyboard */,
 			);
 			path = "GIA-RecycleRush";
 			sourceTree = "<group>";
@@ -188,8 +191,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				97FC0A2D2C294D82000240D3 /* GoogleService-Info.plist in Resources */,
-				840116602C2A3D7000A55B06 /* LaunchScreen.storyboard in Resources */,
-				8401165D2C2A3D6400A55B06 /* Assets.xcassets in Resources */,
+				975EA8CE2C2A41F000B9CEC7 /* LaunchScreen.storyboard in Resources */,
+				97FC0A332C2A40C9000240D3 /* Assets.xcassets in Resources */,
 				9741A9C92C29165E00455CEC /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				975EA8D02C2A430000B9CEC7 /* LeaderBoardViewController.swift in Sources */,
 				97FC0A2F2C29505C000240D3 /* InitialViewController.swift in Sources */,
 				97FC0A312C295282000240D3 /* LoginViewControllerViewController.swift in Sources */,
 				9741A9C62C29165E00455CEC /* ViewController.swift in Sources */,
@@ -213,14 +217,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		8401165E2C2A3D6F00A55B06 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8401165F2C2A3D6F00A55B06 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		9741A9C72C29165E00455CEC /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -15,17 +15,17 @@ class InitialViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        print(Auth.auth().currentUser?.uid as Any)
  
-            if Auth.auth().currentUser != nil {
+        if Auth.auth().currentUser?.uid != nil {
+            performSegue(withIdentifier: "home", sender: self)
                 
-                navigateToHomePage()
             } else {
                 
                 return
             }
         }
-        func navigateToHomePage() {
-            performSegue(withIdentifier: "home", sender: nil)
-        }
+
 
 }

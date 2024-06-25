@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Untitled design-15" translatesAutoresizingMaskIntoConstraints="NO" id="W9D-Kd-Hjc">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Creative_Chatting_App_Logo-removebg-preview" translatesAutoresizingMaskIntoConstraints="NO" id="YCD-tp-JKp">
+                                <rect key="frame" x="19" y="140" width="354" height="573"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemCyanColor"/>
+                        <constraints>
+                            <constraint firstItem="YCD-tp-JKp" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="8dg-mI-fWL"/>
+                            <constraint firstItem="YCD-tp-JKp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="76" id="ENM-lK-eHk"/>
+                            <constraint firstItem="W9D-Kd-Hjc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QYC-Ys-IHH"/>
+                            <constraint firstItem="W9D-Kd-Hjc" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" constant="-59" id="SHd-0l-cWY"/>
+                            <constraint firstItem="W9D-Kd-Hjc" firstAttribute="centerX" secondItem="YCD-tp-JKp" secondAttribute="centerX" id="VfA-gj-W6l"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="YCD-tp-JKp" secondAttribute="bottom" constant="291" id="dWa-wS-YpD"/>
+                            <constraint firstItem="W9D-Kd-Hjc" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="hDC-Ud-X7D"/>
+                            <constraint firstItem="YCD-tp-JKp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="340" id="wmD-kf-y4P"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52.671755725190835" y="374.64788732394368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Creative_Chatting_App_Logo-removebg-preview" width="500" height="500"/>
+        <image name="Untitled design-15" width="2000" height="2000"/>
+        <systemColor name="systemCyanColor">
+            <color red="0.1960784314" green="0.67843137249999996" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
