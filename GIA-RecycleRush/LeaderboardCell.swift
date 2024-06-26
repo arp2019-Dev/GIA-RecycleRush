@@ -10,7 +10,7 @@ import UIKit
 class LeaderboardCell: UICollectionViewCell {
     
     @IBOutlet var nameLabel: UILabel!
-    
+    @IBOutlet var trophyImageView: UIImageView!
     @IBOutlet weak var numberRecycled: UILabel!
     
 }

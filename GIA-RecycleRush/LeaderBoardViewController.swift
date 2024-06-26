@@ -3,7 +3,7 @@
 //  GIA-RecycleRush
 //
 //  Created by Akhil Raju on 6/24/24.
-// used this page for the orange view - mihir
+//  Used this page for the orange view - mihir
 
 import UIKit
 import Firebase
@@ -51,8 +51,8 @@ class LeaderBoardViewController: UIViewController, UICollectionViewDataSource, U
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let screenWidth = UIScreen.main.bounds.width
-        return CGSize(width: screenWidth, height: 58)
+            let screenWidth = UIScreen.main.bounds.width
+            return CGSize(width: screenWidth, height: 58)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -66,6 +66,18 @@ class LeaderBoardViewController: UIViewController, UICollectionViewDataSource, U
         cell.nameLabel.text = object.name
         let intValue = object.numberRecycled
         cell.numberRecycled.text = "TotalRecycled: " + String(intValue)
+        
+        // Assign trophy images based on position
+        switch indexPath.item {
+        case 0:
+            cell.trophyImageView.image = UIImage(named: "gold_trophy.png")
+        case 1:
+            cell.trophyImageView.image = UIImage(named: "silver_trophy.png")
+        case 2:
+            cell.trophyImageView.image = UIImage(named: "bronze_trophy.png")
+        default:
+            cell.trophyImageView.image = UIImage(named: "blue_trophy.png")
+        }
         
         return cell
     }
