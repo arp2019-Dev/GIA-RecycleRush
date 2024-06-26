@@ -16,16 +16,18 @@ class InitialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        print(Auth.auth().currentUser?.uid as Any)
- 
-        if Auth.auth().currentUser?.uid != nil {
-            performSegue(withIdentifier: "home", sender: self)
-                
+        // Add an auth state listener
+        Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
+            guard let self = self else { return }
+            if user != nil {
+                // Perform segue on the main thread
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "home", sender: self)
+                }
             } else {
-                
-                return
+                // Handle the case where there is no user logged in
+                print("No user logged in")
             }
         }
-
-
+    }
 }

@@ -6,48 +6,89 @@
 // used this page for the orange view - mihir
 
 import UIKit
+import Firebase
 import FirebaseAuth
-class LeaderBoardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
-    @IBOutlet weak var tableView: UITableView!
-    
-    var players: [Player] = [
-            Player(name: "Alice", score: 120),
-            Player(name: "Bob", score: 150),
-            Player(name: "Charlie", score: 90)
-        ]
-    
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return players.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LeaderboardCell", for: indexPath)
-                let player = players[indexPath.row]
-                cell.textLabel?.text = "\(player.name) - \(player.score)"
-                return cell
-    }
-    
+import FirebaseDatabase
 
+class LeaderBoardViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    let database = Database.database().reference()
+    
+    var collectionData: [leaderboard] = []
+    var databaseRef: DatabaseReference!
+    @IBOutlet var leaderboardCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if Auth.auth().currentUser != nil {
+        databaseRef = Database.database().reference()
+        
+        leaderboardCollectionView.dataSource = self
+        leaderboardCollectionView.delegate = self
+        leaderboardCollectionView.reloadData()
+        
+        databaseRef.observe(DataEventType.value) { [weak self] (snapshot: DataSnapshot) in
+            guard let dataSnapshot = snapshot.children.allObjects as? [DataSnapshot] else {
+                return
+            }
             
-          return
-        } else {
-            navigateToHomePage()
-           
-        }
-        tableView.dataSource = self
-                tableView.delegate = self
-                players.sort { $0.score > $1.score }
-    }
-    func navigateToHomePage() {
-        performSegue(withIdentifier: "account", sender: nil)
-    }
+            for childSnapshot in dataSnapshot {
+                if let leaderboardObject = self?.parseChildSnapshot(childSnapshot) {
+                    self?.collectionData.append(leaderboardObject)
+                }
+            }
+            
+            self?.sortCollectionData()
 
+            self?.leaderboardCollectionView.reloadData()
+        }
+    }
+    
+    private func sortCollectionData() {
+        collectionData.sort { $0.numberRecycled > $1.numberRecycled }
+    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: 800, height: 58)
+//    }
+//    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let screenWidth = UIScreen.main.bounds.width
+        return CGSize(width: screenWidth, height: 58)
+    }
 
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return collectionData.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LeaderboardCell", for: indexPath) as! LeaderboardCell
+        
+        let object = collectionData[indexPath.item]
+        cell.nameLabel.text = object.name
+        let intValue = object.numberRecycled
+        cell.numberRecycled.text = "TotalRecycled: " + String(intValue)
+        
+        return cell
+    }
+    
+    private func parseChildSnapshot(_ snapshot: DataSnapshot) -> leaderboard? {
+        guard let value = snapshot.value as? [String: Any],
+              let name = value["username"] as? String,
+              let recycled = value["totalRecycled"] as? Int,
+              let fieldToSort = value["totalRecycled"] as? Int else {
+            return nil
+        }
+        
+        let leaderboardObject = leaderboard(name: name, numberRecycled: recycled, fieldToSort: fieldToSort)
+        
+        return leaderboardObject
+    }
+    
+    struct leaderboard {
+        let name: String
+        let numberRecycled: Int
+        let fieldToSort: Int
+    }
 }
