@@ -24,39 +24,36 @@ class LeaderBoardViewController: UIViewController, UICollectionViewDataSource, U
         
         leaderboardCollectionView.dataSource = self
         leaderboardCollectionView.delegate = self
-        leaderboardCollectionView.reloadData()
         
         databaseRef.observe(DataEventType.value) { [weak self] (snapshot: DataSnapshot) in
+            guard let self = self else { return }
+            
+            self.collectionData.removeAll()  // Clear old data
+            
             guard let dataSnapshot = snapshot.children.allObjects as? [DataSnapshot] else {
                 return
             }
             
             for childSnapshot in dataSnapshot {
-                if let leaderboardObject = self?.parseChildSnapshot(childSnapshot) {
-                    self?.collectionData.append(leaderboardObject)
+                if let leaderboardObject = self.parseChildSnapshot(childSnapshot) {
+                    self.collectionData.append(leaderboardObject)
                 }
             }
             
-            self?.sortCollectionData()
+            self.sortCollectionData()
 
-            self?.leaderboardCollectionView.reloadData()
+            self.leaderboardCollectionView.reloadData()
         }
     }
     
     private func sortCollectionData() {
         collectionData.sort { $0.numberRecycled > $1.numberRecycled }
     }
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: 800, height: 58)
-//    }
-//    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenWidth = UIScreen.main.bounds.width
         return CGSize(width: screenWidth, height: 58)
     }
-
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return collectionData.count
@@ -92,3 +89,4 @@ class LeaderBoardViewController: UIViewController, UICollectionViewDataSource, U
         let fieldToSort: Int
     }
 }
+
