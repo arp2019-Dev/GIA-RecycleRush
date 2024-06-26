@@ -17,40 +17,55 @@ class addPFPViewController: UIViewController, UIImagePickerControllerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        activityIndicator = UIActivityIndicatorView(style: .medium)
-               activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-               activityIndicator.hidesWhenStopped = true
-               view.addSubview(activityIndicator)
+        // Setup activity indicator
+        activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.hidesWhenStopped = true
+        view.addSubview(activityIndicator)
 
-               // Center the activity indicator
-               NSLayoutConstraint.activate([
-                   activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                   activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-               ])
+        // Center the activity indicator over the image view
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: imageView.centerYAnchor)
+        ])
         
         fetchProfileImage()
+
         // Configure imageView for circular cropping
         imageView.layer.cornerRadius = imageView.frame.size.width / 2
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
         
+        // Add tap gesture recognizer to the image view
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped))
+        imageView.addGestureRecognizer(tapGesture)
+        imageView.isUserInteractionEnabled = true
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
-           super.viewWillDisappear(animated)
-           // Ensure activity indicator stops when leaving the view controller
-           activityIndicator.stopAnimating()
-       }
+        super.viewWillDisappear(animated)
+        // Ensure activity indicator stops when leaving the view controller
+        activityIndicator.stopAnimating()
+    }
+    
+    @objc func imageViewTapped() {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = .photoLibrary
+        present(imagePickerController, animated: true, completion: nil)
+    }
     
     @IBAction func NextButton(_ sender: Any) {
         activityIndicator.startAnimating()
-
     }
-    
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var uploadButton: UIButton!
 
     @IBAction func uploadButtonTapped(_ sender: UIButton) {
+        activityIndicator.startAnimating()
+        imageView.alpha = 0.5  // Reduce opacity of the image view
+        
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         imagePickerController.sourceType = .photoLibrary
@@ -59,12 +74,21 @@ class addPFPViewController: UIViewController, UIImagePickerControllerDelegate, U
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
-        guard let selectedImage = info[.originalImage] as? UIImage else { return }
+        guard let selectedImage = info[.originalImage] as? UIImage else {
+            activityIndicator.stopAnimating()
+            imageView.alpha = 1.0  // Reset opacity of the image view
+            return
+        }
 
         let circularImage = cropImageToCircle(selectedImage)
         imageView.image = circularImage
 
-        guard let imageData = circularImage.jpegData(compressionQuality: 0.8) else { return }
+        guard let imageData = circularImage.jpegData(compressionQuality: 0.8) else {
+            activityIndicator.stopAnimating()
+            imageView.alpha = 1.0  // Reset opacity of the image view
+            return
+        }
+
         uploadImageToFirebase(imageData)
     }
 
@@ -88,6 +112,8 @@ class addPFPViewController: UIViewController, UIImagePickerControllerDelegate, U
         let storageRef = Storage.storage().reference().child(user.uid).child("profile.jpg")
 
         storageRef.putData(imageData, metadata: nil) { (metadata, error) in
+            self.activityIndicator.stopAnimating()
+            self.imageView.alpha = 1.0  // Reset opacity of the image view
             if let error = error {
                 print("Failed to upload image: \(error.localizedDescription)")
                 return
@@ -172,5 +198,4 @@ extension UIImage {
 
         return image
     }
-        }
-
+}
