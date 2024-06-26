@@ -762,7 +762,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLP-nP-Zqp">
-                                <rect key="frame" x="299" y="160" width="78" height="30"/>
+                                <rect key="frame" x="298" y="160" width="78" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="78" id="EmP-8s-i3r"/>
                                     <constraint firstAttribute="height" constant="30" id="Ne2-Cu-aPA"/>
@@ -784,9 +784,9 @@
                             <constraint firstItem="tks-bM-mFb" firstAttribute="top" secondItem="qdI-oe-JfS" secondAttribute="top" constant="59" id="N6M-hG-0aJ"/>
                             <constraint firstItem="1NL-dq-iIc" firstAttribute="top" secondItem="Y7T-f8-WGE" secondAttribute="bottom" constant="15" id="Ncu-kQ-OK7"/>
                             <constraint firstItem="4dG-7A-gVi" firstAttribute="leading" secondItem="qdI-oe-JfS" secondAttribute="leading" constant="18" id="QQi-ml-24C"/>
+                            <constraint firstItem="qdI-oe-JfS" firstAttribute="trailing" secondItem="q5U-QR-jNE" secondAttribute="trailing" constant="16" id="RvB-ax-3wf"/>
                             <constraint firstItem="hMt-dI-n3X" firstAttribute="top" secondItem="pBW-43-Hkf" secondAttribute="bottom" constant="24" id="aoB-TD-MUk"/>
                             <constraint firstItem="Y7T-f8-WGE" firstAttribute="centerX" secondItem="tks-bM-mFb" secondAttribute="centerX" id="aqC-Qj-I3k"/>
-                            <constraint firstItem="q5U-QR-jNE" firstAttribute="leading" secondItem="4dG-7A-gVi" secondAttribute="trailing" constant="196" id="brn-UJ-eRZ"/>
                             <constraint firstItem="L9j-Et-3g4" firstAttribute="leading" secondItem="qdI-oe-JfS" secondAttribute="leading" constant="18" id="cZJ-2z-qCx"/>
                             <constraint firstItem="qdI-oe-JfS" firstAttribute="trailing" secondItem="L9j-Et-3g4" secondAttribute="trailing" constant="18" id="dQI-k2-ED4"/>
                             <constraint firstItem="L9j-Et-3g4" firstAttribute="top" secondItem="hMt-dI-n3X" secondAttribute="bottom" constant="24" id="dxy-RR-ReZ"/>
@@ -801,7 +801,7 @@
                             <constraint firstItem="Y7T-f8-WGE" firstAttribute="top" secondItem="tks-bM-mFb" secondAttribute="bottom" constant="14" id="q1f-Th-1Hl"/>
                             <constraint firstItem="pBW-43-Hkf" firstAttribute="top" secondItem="4dG-7A-gVi" secondAttribute="bottom" constant="24" id="s9j-vq-QR3"/>
                             <constraint firstItem="pBW-43-Hkf" firstAttribute="leading" secondItem="qdI-oe-JfS" secondAttribute="leading" constant="18" id="uY7-AC-X9d"/>
-                            <constraint firstItem="qdI-oe-JfS" firstAttribute="trailing" secondItem="pLP-nP-Zqp" secondAttribute="trailing" constant="16" id="zBe-1c-UR3"/>
+                            <constraint firstItem="qdI-oe-JfS" firstAttribute="trailing" secondItem="pLP-nP-Zqp" secondAttribute="trailing" constant="17" id="zBe-1c-UR3"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="face25" selectedImage="face25" id="LJE-b8-i08"/>
@@ -848,7 +848,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="z08-P5-O0X"/>
         <segue reference="riI-zM-cvE"/>
-        <segue reference="ZhV-G0-Dbn"/>
+        <segue reference="oTn-Sk-vsI"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="add25" width="25" height="25"/>

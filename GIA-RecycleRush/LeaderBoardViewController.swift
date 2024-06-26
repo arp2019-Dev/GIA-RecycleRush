@@ -15,6 +15,8 @@ class LeaderBoardViewController: UIViewController, UICollectionViewDataSource, U
     
     var collectionData: [leaderboard] = []
     var databaseRef: DatabaseReference!
+    var activityIndicator: UIActivityIndicatorView! // Activity indicator
+    
     @IBOutlet var leaderboardCollectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -25,6 +27,27 @@ class LeaderBoardViewController: UIViewController, UICollectionViewDataSource, U
         leaderboardCollectionView.dataSource = self
         leaderboardCollectionView.delegate = self
         
+        // Initialize and configure activity indicator
+        activityIndicator = UIActivityIndicatorView(style: .medium)
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.transform = CGAffineTransform(scaleX: 3, y: 3) 
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(activityIndicator)
+        
+        // Center the activity indicator
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+        
+        // Start animating the activity indicator
+        activityIndicator.startAnimating()
+        
+        // Fetch data from Firebase
+        fetchLeaderboardData()
+    }
+    
+    private func fetchLeaderboardData() {
         databaseRef.observe(DataEventType.value) { [weak self] (snapshot: DataSnapshot) in
             guard let self = self else { return }
             
@@ -42,6 +65,10 @@ class LeaderBoardViewController: UIViewController, UICollectionViewDataSource, U
             
             self.sortCollectionData()
 
+            // Stop animating the activity indicator
+            self.activityIndicator.stopAnimating()
+            
+            // Reload collection view data
             self.leaderboardCollectionView.reloadData()
         }
     }
@@ -51,8 +78,8 @@ class LeaderBoardViewController: UIViewController, UICollectionViewDataSource, U
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            let screenWidth = UIScreen.main.bounds.width
-            return CGSize(width: screenWidth, height: 58)
+        let screenWidth = UIScreen.main.bounds.width
+        return CGSize(width: screenWidth, height: 58)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

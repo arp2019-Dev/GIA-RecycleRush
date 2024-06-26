@@ -17,21 +17,19 @@ class ProfileViewController: UIViewController {
     let userID = Auth.auth().currentUser?.uid
     
     @IBOutlet weak var nameLabel: UILabel!
-    
     @IBOutlet weak var totalRecycledLabel: UILabel!
-    
     @IBOutlet weak var totalCansLabel: UILabel!
-    
     @IBOutlet weak var totalBottlesLabel: UILabel!
-    
     @IBOutlet weak var totalPaperLabel: UILabel!
-    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var logoutButton: UIButton!
+    
+    var activityIndicator: UIActivityIndicatorView! // Activity indicator
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupActivityIndicator()
         database.child(userID!).observe(DataEventType.value) { [self] snapshot in
             
             let value = snapshot.value as? NSDictionary
@@ -51,10 +49,10 @@ class ProfileViewController: UIViewController {
         fetchProfileImage()
         logoutButton.isHidden = true
 
-//                 Add tap gesture recognizer to the image view
-                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped))
-                imageView.addGestureRecognizer(tapGesture)
-                imageView.isUserInteractionEnabled = true
+        // Add tap gesture recognizer to the image view
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped))
+        imageView.addGestureRecognizer(tapGesture)
+        imageView.isUserInteractionEnabled = true
     }
 
     @objc func imageViewTapped() {
@@ -102,6 +100,10 @@ class ProfileViewController: UIViewController {
         guard let user = Auth.auth().currentUser else { return }
         let databaseRef = Database.database().reference().child(user.uid)
 
+        // Show activity indicator and reduce image view opacity while fetching image
+        activityIndicator.startAnimating()
+        imageView.alpha = 0.5
+        
         databaseRef.observeSingleEvent(of: .value) { (snapshot) in
             if let value = snapshot.value as? [String: AnyObject],
                let profileImageURL = value["profileImageURL"] as? String,
@@ -121,7 +123,22 @@ class ProfileViewController: UIViewController {
             let circularImage = self.cropImageToCircle(image)
             DispatchQueue.main.async {
                 self.imageView.image = circularImage
+                self.activityIndicator.stopAnimating() // Stop activity indicator when image is downloaded
+                self.imageView.alpha = 1.0 
             }
         }.resume()
+    }
+    
+    private func setupActivityIndicator() {
+        activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.color = .gray
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        imageView.addSubview(activityIndicator)
+        
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: imageView.centerYAnchor)
+        ])
     }
 }
