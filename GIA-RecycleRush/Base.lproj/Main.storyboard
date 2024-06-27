@@ -814,14 +814,23 @@
                                     <constraint firstAttribute="height" constant="80" id="p1a-3m-l88"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLP-nP-Zqp">
-                                <rect key="frame" x="298" y="160" width="78" height="30"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLP-nP-Zqp">
+                                <rect key="frame" x="286" y="160" width="90" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="78" id="EmP-8s-i3r"/>
-                                    <constraint firstAttribute="height" constant="30" id="Ne2-Cu-aPA"/>
+                                    <constraint firstAttribute="width" constant="90" id="EmP-8s-i3r"/>
+                                    <constraint firstAttribute="height" constant="40" id="Ne2-Cu-aPA"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Logout">
+                                <buttonConfiguration key="configuration" style="filled" titleAlignment="automatic">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Logout">
+                                            <attributes>
+                                                <font key="NSFont" size="18" name="Apple-Chancery"/>
+                                                <font key="NSOriginalFont" size="12" name="Helvetica"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                     <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -907,7 +916,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="nSa-fd-1BA"/>
         <segue reference="gqG-NZ-PoU"/>
-        <segue reference="IHH-ia-NtZ"/>
+        <segue reference="oTn-Sk-vsI"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Designer-2" width="1024" height="1024"/>

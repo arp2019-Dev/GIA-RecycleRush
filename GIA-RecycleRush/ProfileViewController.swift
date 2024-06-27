@@ -28,7 +28,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+ 
         setupActivityIndicator()
         database.child(userID!).observe(DataEventType.value) { [self] snapshot in
             
