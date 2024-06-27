@@ -6,6 +6,7 @@
 //  Used this page for the orange view - mihir
 
 import UIKit
+//importing what we need for google firebase communications
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
@@ -17,7 +18,7 @@ class LeaderBoardViewController: UIViewController, UICollectionViewDataSource, U
     var databaseRef: DatabaseReference!
     var activityIndicator: UIActivityIndicatorView! // Activity indicator
     
-    @IBOutlet var leaderboardCollectionView: UICollectionView!
+    @IBOutlet var leaderboardCollectionView: UICollectionView! //UI for the leaderboard table
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,21 +77,21 @@ class LeaderBoardViewController: UIViewController, UICollectionViewDataSource, U
     }
     
     private func sortCollectionData() {
-        collectionData.sort { $0.numberRecycled > $1.numberRecycled }
+        collectionData.sort { $0.numberRecycled > $1.numberRecycled } //sorts data in a leaderboard fashion
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenWidth = UIScreen.main.bounds.width
-        return CGSize(width: screenWidth, height: 58)
+        return CGSize(width: screenWidth, height: 58) //sets collection view parameters
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return collectionData.count
+        return collectionData.count //uses number of users in data array to create length of leaderboard
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LeaderboardCell", for: indexPath) as! LeaderboardCell
-        
+        //sets values for each rank of the leaderboard
         let object = collectionData[indexPath.item]
         cell.nameLabel.text = object.name
         let intValue = object.numberRecycled
@@ -110,7 +111,7 @@ class LeaderBoardViewController: UIViewController, UICollectionViewDataSource, U
         
         return cell
     }
-    
+    // Parses DataSnapshot 
     private func parseChildSnapshot(_ snapshot: DataSnapshot) -> leaderboard? {
         guard let value = snapshot.value as? [String: Any],
               let name = value["username"] as? String,
@@ -118,12 +119,12 @@ class LeaderBoardViewController: UIViewController, UICollectionViewDataSource, U
               let fieldToSort = value["totalRecycled"] as? Int else {
             return nil
         }
-        
+        //creates leaderboard object
         let leaderboardObject = leaderboard(name: name, numberRecycled: recycled, fieldToSort: fieldToSort)
         
         return leaderboardObject
     }
-    
+    //leaderboard structure
     struct leaderboard {
         let name: String
         let numberRecycled: Int
