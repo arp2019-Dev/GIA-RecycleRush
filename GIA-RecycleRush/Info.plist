@@ -27,5 +27,9 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Quicksand-VariableFont_wght.ttf</string>
+	</array>
 </dict>
 </plist>
