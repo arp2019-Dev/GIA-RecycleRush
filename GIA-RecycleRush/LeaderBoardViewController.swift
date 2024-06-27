@@ -21,6 +21,8 @@ class LeaderBoardViewController: UIViewController, UICollectionViewDataSource, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        leaderboardCollectionView.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+
         
         databaseRef = Database.database().reference()
         

@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -347,7 +347,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVu-87-qEI">
-                                <rect key="frame" x="211.33333333333337" y="326.66666666666669" width="151.66666666666663" height="34.333333333333314"/>
+                                <rect key="frame" x="211.33333333333337" y="326.66666666666669" width="151.66666666666663" height="40.333333333333314"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Forgot Password">
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
@@ -496,6 +496,7 @@
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Otm-3z-gtX">
                                 <rect key="frame" x="0.0" y="165" width="393" height="588"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CCJ-A0-mS4">
                                     <size key="itemSize" width="393" height="54"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -536,6 +537,7 @@
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
+                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="8F6-vN-Uxf" firstAttribute="leading" secondItem="WjU-kY-lRb" secondAttribute="leading" constant="8" id="Cbk-hG-lT4"/>
                                                 <constraint firstItem="FRk-qQ-hCf" firstAttribute="leading" secondItem="8F6-vN-Uxf" secondAttribute="trailing" constant="8" id="I8d-5J-Pae"/>
@@ -546,7 +548,8 @@
                                                 <constraint firstAttribute="trailing" secondItem="5XH-oX-lgB" secondAttribute="trailing" constant="18" id="iDl-HE-F6Y"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="393" height="54"/>
                                         <connections>
                                             <outlet property="nameLabel" destination="FRk-qQ-hCf" id="I4X-ai-MEI"/>
@@ -882,12 +885,13 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="3l8-NL-fa3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="ZPj-5F-3iT"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6pS-aI-ljr">
+                    <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="6pS-aI-ljr">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" systemColor="systemBackgroundColor"/>
-                        <color key="barTintColor" systemColor="systemBackgroundColor"/>
-                        <color key="selectedImageTintColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="6eI-Q5-x55" kind="relationship" relationship="viewControllers" id="EjY-0W-dZh"/>
@@ -901,19 +905,22 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="IBJ-gf-xBh"/>
+        <segue reference="nSa-fd-1BA"/>
         <segue reference="gqG-NZ-PoU"/>
-        <segue reference="oTn-Sk-vsI"/>
+        <segue reference="IHH-ia-NtZ"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Designer-2" width="1024" height="1024"/>
         <image name="add25" width="25" height="25"/>
         <image name="bars25" width="25" height="25"/>
         <image name="face25" width="25" height="25"/>
-        <image name="person.circle" catalog="system" width="32" height="32"/>
+        <image name="person.circle" catalog="system" width="128" height="123"/>
         <image name="recyclerushbackground" width="2000" height="2000"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
