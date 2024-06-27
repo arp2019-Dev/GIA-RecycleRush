@@ -6,6 +6,7 @@
 //
 
 import UIKit
+//importing for google firebase 
 import Firebase
 import FirebaseAuth
 import FirebaseStorage
@@ -13,8 +14,8 @@ import FirebaseDatabase
 
 class ProfileViewController: UIViewController {
 
-    let database = Database.database().reference()
-    let userID = Auth.auth().currentUser?.uid
+    let database = Database.database().reference() // database with recyling values
+    let userID = Auth.auth().currentUser?.uid // gets userid
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var totalRecycledLabel: UILabel!
@@ -30,7 +31,7 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
  
         setupActivityIndicator()
-        database.child(userID!).observe(DataEventType.value) { [self] snapshot in
+        database.child(userID!).observe(DataEventType.value) { [self] snapshot in // displays personal recycling info
             
             let value = snapshot.value as? NSDictionary
             let name = value?["name"] as? String ?? ""
@@ -47,7 +48,7 @@ class ProfileViewController: UIViewController {
             
         }
         fetchProfileImage()
-        logoutButton.isHidden = true
+        logoutButton.isHidden = true //user logout option
 
         // Add tap gesture recognizer to the image view
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped))
@@ -64,7 +65,7 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    @IBAction func Logout(_ sender: Any) {
+    @IBAction func Logout(_ sender: Any) { //logout function
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
@@ -81,7 +82,7 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    func cropImageToCircle(_ image: UIImage) -> UIImage {
+    func cropImageToCircle(_ image: UIImage) -> UIImage { //user image
         let minLength = min(image.size.width, image.size.height)
         let squareImage = image.cropToBounds(width: Double(minLength), height: Double(minLength))
         let imageView = UIImageView(image: squareImage)
