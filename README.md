@@ -1,3 +1,6 @@
+# Recycle Rush
+
+
 ## Inspiration
 The inspiration for Recycle Rush came from observing how litter negatively impacts the appearance of public places. We noticed that much of the litter consisted of bottles, cans, and paper products—items that could easily be recycled. Realizing that recycling these products would significantly improve the cleanliness of public areas, we decided to create a gamified recycling app. By making recycling fun and competitive, Recycle Rush encourages good recycling habits and helps keep public spaces cleaner.
 
