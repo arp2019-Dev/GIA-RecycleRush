@@ -15,7 +15,7 @@ class NewEntryViewController: UIViewController, UIImagePickerControllerDelegate,
 
     let database = Database.database().reference()
     let userID = Auth.auth().currentUser?.uid
-    
+    //new entry inputs
     @IBOutlet weak var CansTextField: UITextField!
     @IBOutlet weak var BottlesTextField: UITextField!
     @IBOutlet weak var PaperTextField: UITextField!
@@ -43,7 +43,7 @@ class NewEntryViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBAction func AddNewEntryButton(_ sender: Any) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = .camera  // Change to camera for live capture
+        imagePicker.sourceType = .camera  // camera for live capture
         present(imagePicker, animated: true, completion: nil)
     }
     
@@ -73,7 +73,7 @@ class NewEntryViewController: UIViewController, UIImagePickerControllerDelegate,
         picker.dismiss(animated: true, completion: nil)
     }
     
-    func resize(image: UIImage, targetSize: CGSize) -> UIImage {
+    func resize(image: UIImage, targetSize: CGSize) -> UIImage { //image processing 
         let size = image.size
         
         let widthRatio  = targetSize.width  / size.width
@@ -95,7 +95,7 @@ class NewEntryViewController: UIViewController, UIImagePickerControllerDelegate,
         return newImage ?? UIImage()
     }
     
-    func analyzeImage(image: UIImage, completion: @escaping (Bool, Error?) -> Void) {
+    func analyzeImage(image: UIImage, completion: @escaping (Bool, Error?) -> Void) { //analyze if image has trash
         guard let ciImage = CIImage(image: image) else {
             completion(false, NSError(domain: "ImageAnalysisError", code: -1, userInfo: [NSLocalizedDescriptionKey: "Couldn't convert UIImage to CIImage"]))
             return
@@ -128,7 +128,7 @@ class NewEntryViewController: UIViewController, UIImagePickerControllerDelegate,
         }
     }
     
-    private func processNewEntry() {
+    private func processNewEntry() { //submits entry if ml detection works
         guard let image = lastAnalyzedImage else {
             showAlert(title: "Error", message: "No image to process")
             return
@@ -167,7 +167,7 @@ class NewEntryViewController: UIViewController, UIImagePickerControllerDelegate,
         }
     }
     
-    func updateCans(_ newCansAddInt: Int, completion: @escaping () -> Void) {
+    func updateCans(_ newCansAddInt: Int, completion: @escaping () -> Void) { //updating recycling values for cans
         database.child(userID!).observeSingleEvent(of: .value, with: { [weak self] snapshot in
             guard let self = self else { return }
             
@@ -192,7 +192,7 @@ class NewEntryViewController: UIViewController, UIImagePickerControllerDelegate,
         })
     }
     
-    func updateBottles(_ newBottlesAddInt: Int, completion: @escaping () -> Void) {
+    func updateBottles(_ newBottlesAddInt: Int, completion: @escaping () -> Void) { //updating recycling values for bottles
         database.child(userID!).observeSingleEvent(of: .value, with: { [weak self] snapshot in
             guard let self = self else { return }
             
@@ -217,7 +217,7 @@ class NewEntryViewController: UIViewController, UIImagePickerControllerDelegate,
         })
     }
     
-    func updatePaper(_ newPaperAddInt: Int, completion: @escaping () -> Void) {
+    func updatePaper(_ newPaperAddInt: Int, completion: @escaping () -> Void) { //updating recycling values for paper products
         database.child(userID!).observeSingleEvent(of: .value, with: { [weak self] snapshot in
             guard let self = self else { return }
             
@@ -242,7 +242,7 @@ class NewEntryViewController: UIViewController, UIImagePickerControllerDelegate,
         })
     }
     
-    func updateTotalRecycled() {
+    func updateTotalRecycled() { //update total
         database.child(userID!).observeSingleEvent(of: .value, with: { [weak self] snapshot in
             guard let self = self else { return }
             
@@ -268,13 +268,13 @@ class NewEntryViewController: UIViewController, UIImagePickerControllerDelegate,
         })
     }
     
-    func showSuccessAlert() {
+    func showSuccessAlert() { //recycling detected
         let alert = UIAlertController(title: "Success", message: "Your recycling entry has been recorded.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
-    func showNotTrashAlert() {
+    func showNotTrashAlert() { //recycling not detected in image
         let alert = UIAlertController(title: "Entry Denied", message: "No trash detected in the uploaded image. Please upload a valid image.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
