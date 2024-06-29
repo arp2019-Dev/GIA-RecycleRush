@@ -6,18 +6,19 @@
 //
 
 import UIKit
+// import firebase things
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 
 class LoginViewControllerViewController: UIViewController {
 
-    @IBOutlet var EmailTextField: UITextField!
+    @IBOutlet var EmailTextField: UITextField! //email input
     
     
-    @IBOutlet var PasswordTextField: UITextField!
+    @IBOutlet var PasswordTextField: UITextField! // password input
     
-    @IBOutlet var ResetEmail: UITextField!
+    @IBOutlet var ResetEmail: UITextField! // reset option
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,7 @@ class LoginViewControllerViewController: UIViewController {
         
         guard let password = PasswordTextField.text
         else {return}
-        
+        //looking for account
         Auth.auth().signIn(withEmail: email, password: password) { [self] firebaseResult, error in
             if let error = error {
                 print(error)
@@ -52,7 +53,7 @@ class LoginViewControllerViewController: UIViewController {
         }
     }
     @IBAction func passwordreset(_ sender: Any) {
-        
+        //password reset tool
         guard let passreset = ResetEmail.text
         else {return}
         

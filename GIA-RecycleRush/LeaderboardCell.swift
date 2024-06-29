@@ -6,9 +6,9 @@
 //
 
 import UIKit
-
+// sets view cell settings for the leaderboard
 class LeaderboardCell: UICollectionViewCell {
-
+// adds in the data into the collection view
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var trophyImageView: UIImageView!
     @IBOutlet weak var numberRecycled: UILabel!

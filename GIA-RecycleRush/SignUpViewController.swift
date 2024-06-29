@@ -30,7 +30,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     
     let database = Database.database().reference()
     
-    
+    // account creation inputs: 
     @IBOutlet weak var usernameTextField: UITextField!
     
     @IBOutlet weak var NameTextField: UITextField!
