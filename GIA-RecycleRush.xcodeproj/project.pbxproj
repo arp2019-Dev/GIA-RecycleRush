@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		84B0A2502C2B4A5200E761BD /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0A24F2C2B4A5200E761BD /* Player.swift */; };
 		97155B242C2D25DE00BB1EAA /* classes.json in Resources */ = {isa = PBXBuildFile; fileRef = 97155B212C2D25DD00BB1EAA /* classes.json */; };
 		97155B252C2D25DE00BB1EAA /* TrashClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 97155B222C2D25DD00BB1EAA /* TrashClassifier.mlmodel */; };
 		972C6F372C2C0EFC000BE86E /* addPFPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972C6F362C2C0EFC000BE86E /* addPFPViewController.swift */; };
@@ -47,7 +46,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		84B0A24F2C2B4A5200E761BD /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		970950632C2CF9690087D876 /* Quicksand-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		97155B212C2D25DD00BB1EAA /* classes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = classes.json; sourceTree = "<group>"; };
 		97155B222C2D25DD00BB1EAA /* TrashClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TrashClassifier.mlmodel; sourceTree = "<group>"; };
@@ -145,7 +143,6 @@
 				9741A9CF2C29165F00455CEC /* Info.plist */,
 				97FC0A2C2C294D82000240D3 /* GoogleService-Info.plist */,
 				975EA8CD2C2A41F000B9CEC7 /* LaunchScreen.storyboard */,
-				84B0A24F2C2B4A5200E761BD /* Player.swift */,
 				972C6F382C2C1B08000BE86E /* gold_trophy.png */,
 				972C6F3E2C2C1D06000BE86E /* silver_trophy.png */,
 				972C6F422C2C1D91000BE86E /* bronze_trophy.png */,
@@ -260,7 +257,6 @@
 				9741A9C62C29165E00455CEC /* ViewController.swift in Sources */,
 				97FC31FA2C2BF6E900241B90 /* ProfileViewController.swift in Sources */,
 				97155B252C2D25DE00BB1EAA /* TrashClassifier.mlmodel in Sources */,
-				84B0A2502C2B4A5200E761BD /* Player.swift in Sources */,
 				9741A9C22C29165E00455CEC /* AppDelegate.swift in Sources */,
 				97FC0A2B2C2948B2000240D3 /* SignUpViewController.swift in Sources */,
 				9741A9C42C29165E00455CEC /* SceneDelegate.swift in Sources */,
