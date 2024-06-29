@@ -6,6 +6,7 @@
 //
 
 import UIKit
+//Import firebase things
 import FirebaseAuth
 import FirebaseStorage
 import FirebaseDatabase
@@ -49,6 +50,7 @@ class addPFPViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     @objc func imageViewTapped() {
+        //pick profile photo
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         imagePickerController.sourceType = .photoLibrary
@@ -91,7 +93,7 @@ class addPFPViewController: UIViewController, UIImagePickerControllerDelegate, U
 
         uploadImageToFirebase(imageData)
     }
-
+// profile photo view
     func cropImageToCircle(_ image: UIImage) -> UIImage {
         let minLength = min(image.size.width, image.size.height)
         let squareImage = image.cropToBounds(width: Double(minLength), height: Double(minLength))
@@ -106,7 +108,7 @@ class addPFPViewController: UIViewController, UIImagePickerControllerDelegate, U
         UIGraphicsEndImageContext()
         return circularImage
     }
-
+// image is stored on firebase server
     func uploadImageToFirebase(_ imageData: Data) {
         guard let user = Auth.auth().currentUser else { return }
         let storageRef = Storage.storage().reference().child(user.uid).child("profile.jpg")
